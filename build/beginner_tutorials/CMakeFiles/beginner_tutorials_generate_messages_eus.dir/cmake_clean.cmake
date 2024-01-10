@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/geetham/catkin_ws/devel/share/roseus/ros/beginner_tutorials/manifest.l"
   "/home/geetham/catkin_ws/devel/share/roseus/ros/beginner_tutorials/msg/Num.l"
+  "/home/geetham/catkin_ws/devel/share/roseus/ros/beginner_tutorials/srv/AddTwoInts.l"
   "CMakeFiles/beginner_tutorials_generate_messages_eus"
 )
 

@@ -90,6 +90,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -483,6 +483,21 @@ beginner_tutorials_generate_messages_nodejs/fast:
 .PHONY : beginner_tutorials_generate_messages_nodejs/fast
 
 # Convenience name for target.
+beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/rule:
+	cd /home/geetham/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/rule
+
+# Convenience name for target.
+_beginner_tutorials_generate_messages_check_deps_AddTwoInts: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/rule
+
+.PHONY : _beginner_tutorials_generate_messages_check_deps_AddTwoInts
+
+# fast build rule for target.
+_beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast:
+	cd /home/geetham/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/build.make beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/build
+.PHONY : _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast
+
+# Convenience name for target.
 beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
 	cd /home/geetham/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
@@ -581,6 +596,7 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... install/local"
 	@echo "... rosgraph_msgs_generate_messages_eus"
@@ -604,6 +620,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _beginner_tutorials_generate_messages_check_deps_Num"
 	@echo "... beginner_tutorials_generate_messages_nodejs"
+	@echo "... _beginner_tutorials_generate_messages_check_deps_AddTwoInts"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... beginner_tutorials_generate_messages_eus"
 	@echo "... beginner_tutorials_generate_messages_py"
@@ -611,7 +628,6 @@ help:
 	@echo "... beginner_tutorials_gennodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... test"
-	@echo "... edit_cache"
 .PHONY : help
 
 
